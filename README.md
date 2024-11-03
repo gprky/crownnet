@@ -18,4 +18,4 @@
 
 1. Клонируйте репозиторий:
    ```bash
-   git clone https://github.com/username/crownnet.git
+   git clone https://github.com/gprky/crownnet.git
