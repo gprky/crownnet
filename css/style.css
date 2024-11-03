@@ -1,9 +1,54 @@
 /* Общие стили */
-body {
-    font-family: Arial, sans-serif;
+* {
     margin: 0;
     padding: 0;
-    color: #333;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: #ffffff;
+    background-color: #1a1a2e;
+    overflow-x: hidden;
+}
+
+/* Фон с анимацией паутины */
+.background-animation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, #2a2a40, #1a1a2e);
+    overflow: hidden;
+    z-index: -1;
+}
+
+.background-animation::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: repeating-linear-gradient(
+        45deg,
+        rgba(255, 255, 255, 0.05),
+        rgba(255, 255, 255, 0.05) 1px,
+        transparent 1px,
+        transparent 50px
+    );
+    animation: rotate 60s linear infinite;
+    opacity: 0.2;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
 }
 
 /* Навигация */
@@ -12,8 +57,16 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 20px;
-    background-color: #333;
-    color: #fff;
+    background-color: rgba(26, 26, 46, 0.8);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 10;
+}
+
+.navbar .logo {
+    font-size: 1.8em;
+    color: #ff66b3;
 }
 
 .navbar ul {
@@ -21,57 +74,52 @@ body {
     list-style: none;
 }
 
+.navbar li {
+    margin-left: 20px;
+}
+
 .navbar a {
     color: #fff;
     text-decoration: none;
-    margin: 0 15px;
+    font-weight: bold;
 }
 
+.navbar a:hover {
+    color: #ff66b3;
+}
+
+/* Герой-блок */
 .hero {
     height: 100vh;
-    background: url('https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?fit=crop&w=1350&q=80') center/cover;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    color: #fff;
     text-align: center;
+    padding-top: 60px;
+}
+
+.hero h1 {
+    font-size: 3em;
+    color: #ff66b3;
+}
+
+.hero p {
+    font-size: 1.2em;
+    margin-top: 10px;
+    color: #ccccff;
 }
 
 .cta {
     padding: 10px 20px;
-    background: #ff6600;
-    color: #fff;
+    background-color: #ff66b3;
+    color: #ffffff;
     text-decoration: none;
+    font-weight: bold;
     border-radius: 5px;
     margin-top: 20px;
 }
 
-.services, .features, .pricing, .footer {
-    padding: 60px 20px;
-    text-align: center;
-}
-
-.feature-list, .service-list, .pricing-cards {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-
-.service-item, .feature-item, .card {
-    width: 300px;
-    padding: 20px;
-    margin: 10px;
-    background: #f9f9f9;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.footer {
-    background: #333;
-    color: #fff;
-}
-
-.footer a {
-    color: #ff6600;
+.cta:hover {
+    background-color: #e55c9d;
 }
