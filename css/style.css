@@ -13,7 +13,7 @@ body {
 
 .header {
     position: relative;
-    background-image: url('https://your-background-image-url.com'); /* Замените на ссылку на ваш фон */
+    background-image: url('../images/background.jpg'); /* Путь к фоновому изображению */
     background-size: cover;
     background-position: center;
     height: 100vh;
